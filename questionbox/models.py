@@ -7,6 +7,13 @@ class Question(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     favorites = models.ManyToManyField(User, related_name='favorite')
 
+    @property
+    def answers(self):
+        return Answer.objects.filter(question=self)
+
+    def numfavorites(self):
+        return self.favorites.all().count()    
+
 class Answer(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     body = models.TextField()
