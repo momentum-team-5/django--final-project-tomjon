@@ -26,7 +26,6 @@ urlpatterns = [
     path('questionbox/add/', questionbox_views.add_question, name='add_poem'),
     path('questionbox/<int:pk>/delete/', questionbox_views.questions.delete, name='questions_delete'),
     path('questionbox/favorite/<int:pk>/<int:user_pk>/', questionbox_views.add_favorite, name='questions_add_favorite')
-    
 ]
 
 if settings.DEBUG:
