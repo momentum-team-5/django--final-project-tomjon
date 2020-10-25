@@ -1,0 +1,98 @@
+* {
+    font-style: sans-serif;
+    box-sizing: border-box;
+    margin: .2rem;
+}
+
+a {
+    color: black;
+}
+
+.menu {
+    display: flex;
+    background-color: #ababab;
+    flex: 1 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.menu > a {
+    text-decoration: none;
+    padding: 1rem;
+}
+
+.menu > a:hover {
+    background-color: black;
+    color: white;
+    transition-duration: 200ms;
+}
+
+.messages {
+    background-color: lightyellow;
+}
+
+.success {
+    font-size: 1.2rem;
+    color: green;
+}
+
+.error {
+    color: red;
+    font-weight: bolder;
+}
+
+.poems-container {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.poem-container {
+    border: 1px dashed black;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.poem-author {
+    text-decoration: underline;
+    font-style: italic;
+    margin-bottom: 1.2rem;
+    margin-top: 1.2rem;
+}
+
+.poem-body {
+    margin: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    margin-bottom: 1rem;
+    width: 100vw;
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+    width: 100vw;
+    margin-top: 1rem;
+}
+
+footer.menu {
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.search-form ul {
+    list-style-type: none;
+    display: inline-flex;
+}
