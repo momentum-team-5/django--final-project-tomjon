@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<h3>{{ question.title }}</h3>
+
+<div class="question-wrapper">
+
+    <div class='question-container'>
+        <h4>{{ poem.title }}</h4>
+        <p class='question-author'>{{ question.author }}</p>
+        <p class='question-body'><pre>{{ question.body }}</pre></p>
+    </div>
+
+    {% if request.user.is_authenticated and request.user == question.author %}
+        <p>
+            <a href="{% url 'questions_delete' pk=question.pk %}" style="color:red;">Remove your question</a>
+        </p>
+    {% endif %}
+
+    <hr>
+
+    <div class="answers-container">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="submit your answer">
+        </form>
+
+        {% for comment in comments %}
+            <hr>
+            <div class='question-answer-container'>
+                <p class='timestamp'>Answer added on ({{ answer.timestamp }}): <pre>{{ answer.body }}</pre></p>
+            </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+{% endblock %}
