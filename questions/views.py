@@ -8,7 +8,7 @@ from .forms import QuestionForm, AnswerForm
 
 def questions_list(request):
     questions = Question.objects.all()
-    return render(request, "questionbox/questions_list.html", {"questions": questions})
+    return render(request, "questions_list.html", {"questions": questions})
 
 def questions_detail(request, pk):
     question = get_list_or_404(Question, pk=pk)
@@ -25,7 +25,7 @@ def questions_detail(request, pk):
             return redirect(to="questions_detail", pk=question.pk)
         else:
             error(request, "Couldn't save answer")
-    return render(request, "questionbox/questions_detail.html", {"question": question, "answer": answer, "form": form})
+    return render(request, "questions_detail.html", {"question": question, "answer": answer, "form": form})
 
 @login_required
 def add_question(request):
@@ -47,7 +47,7 @@ def add_question(request):
         else:
             error(request, "Your question could not be created")
 
-    return render(request, "questionbox/questions_add.html", {"form": form})
+    return render(request, "questions_add.html", {"form": form})
 
 @login_required
 def questions_delete(request, pk):

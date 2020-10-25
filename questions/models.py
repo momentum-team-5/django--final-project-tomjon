@@ -1,11 +1,11 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.conf import settings
 
 class Question(models.Model):
     title = models.CharField(max_length=255)
     body = models.TextField()
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
-    favorites = models.ManyToManyField(User, related_name='favorite')
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    favorites = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='favorite')
 
     @property
     def answers(self):
