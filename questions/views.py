@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect, get_list_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.core.mail import send_mail, mail_admins
 from django.contrib.messages import success, error
-from django.contrib.auth.models import User
+from users.models import User
 from django.contrib.auth.decorators import login_required
 from .models import Question, Answer
 from .forms import QuestionForm, AnswerForm
@@ -11,8 +11,8 @@ def questions_list(request):
     return render(request, "questions_list.html", {"questions": questions})
 
 def questions_detail(request, pk):
-    question = get_list_or_404(Question, pk=pk)
-    answer = question.answer
+    question = get_object_or_404(Question, pk=pk)
+    answer = question.answers
     if request.method =="GET":
         form = AnswerForm()
     else:
@@ -28,7 +28,7 @@ def questions_detail(request, pk):
     return render(request, "questions_detail.html", {"question": question, "answer": answer, "form": form})
 
 @login_required
-def add_question(request):
+def questions_add(request):
     if request.method == "GET":
         form = QuestionForm()
 

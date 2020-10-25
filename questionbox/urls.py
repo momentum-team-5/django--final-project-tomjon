@@ -24,9 +24,9 @@ urlpatterns = [
     path('accounts/', include('registration.backends.simple.urls')),
     path('', question_views.questions_list, name='questions_list'),
     path('questionbox/<int:pk>/', question_views.questions_detail, name='questions_detail'),
-    path('questionbox/add/', question_views.add_question, name='add_poem'),
+    path('questionbox/add/', question_views.questions_add, name='questions_add'),
     path('questionbox/<int:pk>/delete/', question_views.questions_delete, name='questions_delete'),
-    path('questionbox/favorite/<int:pk>/<int:user_pk>/', question_views.add_favorite, name='questions_add_favorite')
+    path('questionbox/favorite/<int:pk>/<int:user_pk>/', question_views.add_favorite, name='add_favorite')
 ]
 
 if settings.DEBUG:
