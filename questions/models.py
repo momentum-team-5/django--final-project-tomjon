@@ -4,7 +4,7 @@ from django.conf import settings
 class Question(models.Model):
     title = models.CharField(max_length=255)
     body = models.TextField()
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='questions')
     favorites = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='favorites')
 
     def numfavorites(self):

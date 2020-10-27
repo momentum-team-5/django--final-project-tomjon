@@ -99,4 +99,8 @@ def add_answer_favorite(request, pk,):
     numLikes = answer.numfavorites()           
     return JsonResponse({"message": message, "numLikes": numLikes})
 
-    
+
+def user_questions(request, pk):
+    question_user = request.user
+    question = question_user.questions.all()
+    return render(request, "user_questions.html", {"questions": question, "question_user": question_user})
