@@ -66,3 +66,5 @@ def add_favorite(request, pk, user_pk):
     return redirect(to="questions_list")
     # need to be able to favorite answers as well
     # repeat entire code block or just add answer = get_obj... +
+
+    

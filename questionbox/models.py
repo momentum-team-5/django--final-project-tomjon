@@ -15,3 +15,6 @@ class Question(models.Model):
     body = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     favorites = models.ManyToManyField(User, related_name="favorites")
+
+    def numfavorites(self)
+        return self.favorites.count
