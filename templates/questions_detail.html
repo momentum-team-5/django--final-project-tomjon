@@ -27,12 +27,16 @@
             <input type="submit" value="submit your answer">
         </form>
 
-        {% for comment in comments %}
+        {% for answer in answers %}
             <hr>
             <div class='question-answer-container'>
-                <p class='timestamp'>Answer added on ({{ answer.timestamp }}): <pre>{{ answer.body }}</pre></p>
+                <p class='timestamp'>Answer added on ({{ answer.timestamp }}): <pre>{{ answer.body }}</pre>
+                By: {{answer.author}}
+                    <button onclick="sendFavorite(this, '{% url 'add_answer_favorite' pk=answer.pk %}')">{{ answer.numfavorites }} favorites</button>                
+                </p> 
             </div>
         {% endfor %}
+          
 
     </div>
 

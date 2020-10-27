@@ -1,5 +1,4 @@
 * {
-    font-style: sans-serif;
     box-sizing: border-box;
     margin: .2rem;
 }
@@ -10,7 +9,7 @@ a {
 
 .menu {
     display: flex;
-    background-color: #ababab;
+    background-color: #4f65dd;
     flex: 1 1 auto;
     flex-direction: row;
     flex-wrap: wrap;
@@ -41,27 +40,26 @@ a {
     font-weight: bolder;
 }
 
-.poems-container {
+.questions-container {
     display: flex;
     flex: 1 1 auto;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.poem-container {
+.question-container {
     border: 1px dashed black;
     border-radius: 5px;
     padding: 1rem;
 }
 
-.poem-author {
+.question-author {
     text-decoration: underline;
-    font-style: italic;
     margin-bottom: 1.2rem;
     margin-top: 1.2rem;
 }
 
-.poem-body {
+.question-body {
     margin: 1rem;
     margin-bottom: 1.2rem;
 }
@@ -95,4 +93,8 @@ hr {
 .search-form ul {
     list-style-type: none;
     display: inline-flex;
+}
+
+.question-answer-container {
+    border: 1px solid black;
 }
