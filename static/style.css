@@ -7,17 +7,11 @@ a {
     color: black;
 }
 
-h3 {
-    margin: 5px 0px 10px 0px;
-}
-
-
-
-p {
-    font-weight: bold;
+h4 {
     color: rgb(79, 101, 221);
-    
 }
+
+
 
 .menu {
     display: flex;
@@ -54,12 +48,12 @@ p {
     font-weight: bolder;
 }
 
-.questions-container {
+/* .questions-container {
     display: flex;
     flex: 1 1 auto;
     flex-direction: row;
     flex-wrap: wrap;
-}
+} */
 
 .question-container {
     border: 1px dashed black;
@@ -76,6 +70,7 @@ p {
 
 .question-body {
     margin: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header {

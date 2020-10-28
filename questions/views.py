@@ -36,7 +36,7 @@ def questions_add(request):
         form = QuestionForm(data=request.POST)
         if form.is_valid():
             question = form.save(commit=False)
-            question.author = request.user # associate the new poem with the currently signed in user
+            question.author = request.user 
             question.save()
             success(request, "Your question was created!")
             return redirect(to="questions_list")
@@ -60,7 +60,7 @@ def answers_add(request, pk):
         form = AnswerForm(data=request.POST)
         if form.is_valid():
             answer = form.save(commit=False)
-            answer.author = request.user # associate the new poem with the currently signed in user
+            answer.author = request.user 
             answer.save()
             success(request, "Your answer was submitted!")
             send_mail("Your question was answered", "Someone answered your question! Check it out.", recipient_list=[question.author.email], fail_silently=True)

@@ -8,7 +8,7 @@
 
     <div class='question-container'>
         <p class='question-author'>Asked by {{ question.author }}</p>
-        <p class='question-body'><pre>{{ question.body }}</pre></p>
+        <p class='question-body'>{{ question.body }}</p>
     </div>
 
     {% if request.user.is_authenticated and request.user == question.author %}
@@ -30,7 +30,7 @@
             <hr>
             <div class='question-answer-container'>
                 <p class='timestamp'>Answer added on ({{ answer.timestamp }}): <pre>{{ answer.body }}</pre>
-                <p>By: {{answer.author}}</p>
+                <p>By: {{ user }}</p>
                 <p>
                     <button onclick="sendFavorite(this, '{% url 'add_answer_favorite' pk=answer.pk %}')">{{ answer.numfavorites }} favorites</button> 
                     <button onclick="markAsCorrect(this, '{% url 'mark_as_correct' pk=answer.pk %}')">
