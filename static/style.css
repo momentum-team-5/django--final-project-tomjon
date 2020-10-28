@@ -7,22 +7,34 @@ a {
     color: black;
 }
 
+h3 {
+    margin: 5px 0px 10px 0px;
+}
+
+p {
+    font-weight: bold;
+    color: rgb(79, 101, 221);
+    
+}
+
 .menu {
     display: flex;
-    background-color: #4f65dd;
+    background-color: rgb(79, 101, 221);
     flex: 1 1 auto;
     flex-direction: row;
     flex-wrap: wrap;
+    font-weight: bold;
 }
 
 .menu > a {
     text-decoration: none;
+    color: white;
     padding: 1rem;
 }
 
 .menu > a:hover {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: rgb(79, 101, 221);
     transition-duration: 200ms;
 }
 
@@ -60,7 +72,6 @@ a {
 }
 
 .question-body {
-    margin: 1rem;
     margin-bottom: 1.2rem;
 }
 
@@ -97,4 +108,14 @@ hr {
 
 .question-answer-container {
     border: 1px solid black;
+}
+
+button:hover {
+    background-color: rgb(79, 101, 221);
+    color: white;
+}
+
+input:hover {
+    background-color: rgb(79, 101, 221);
+    color: white;
 }

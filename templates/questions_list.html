@@ -2,7 +2,7 @@
 
 
 {% block content %}
-<h3>All Questions!</h3>
+
 
 <div class="poems-container">
     
@@ -10,7 +10,7 @@
         <div class='question-container'>
             <h4>{{ question.title }}</h4>
             <p class='question-author'>    by {{ question.author }}</p>
-            <pre class='question-body'>{{ poem.body }}</pre>
+            <pre class='question-body'>{{ question.body }}</pre>
             <p>
                 <a href="{% url 'questions_detail' pk=question.pk %}">More information</a>
                 

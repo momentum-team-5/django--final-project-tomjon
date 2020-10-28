@@ -13,14 +13,14 @@
 
     <body>
         <header class="menu">
-            <a href="{% url 'questions_list' %}">All questions</a>
+            <a href="{% url 'questions_list' %}">All Questions</a>
             {% if request.user.is_authenticated %}
-                <a href="{% url 'questions_add' %}">Ask a new question</a>
-                <a href="{% url 'user_questions' pk=user.pk %}"> Check out your questions</a>
-                <a href="/accounts/logout/">logout</a>
+                <a href="{% url 'questions_add' %}">Ask a New Question</a>
+                <a href="{% url 'user_questions' pk=user.pk %}"> Check Out Your Questions</a>
+                <a href="/accounts/logout/">Logout</a>
             {% else %}
-                <a href="/accounts/login/">login</a>
-                <a href="/accounts/register/">create account</a>
+                <a href="/accounts/login/">Login</a>
+                <a href="/accounts/register/">Create an Account</a>
             {% endif %}
         </header>
 
