@@ -1,5 +1,4 @@
 * {
-    font-style: sans-serif;
     box-sizing: border-box;
     margin: .2rem;
 }
@@ -8,22 +7,36 @@ a {
     color: black;
 }
 
+h3 {
+    margin: 5px 0px 10px 0px;
+}
+
+
+
+p {
+    font-weight: bold;
+    color: rgb(79, 101, 221);
+    
+}
+
 .menu {
     display: flex;
-    background-color: #ababab;
+    background-color: rgb(79, 101, 221);
     flex: 1 1 auto;
     flex-direction: row;
     flex-wrap: wrap;
+    font-weight: bold;
 }
 
 .menu > a {
     text-decoration: none;
+    color: white;
     padding: 1rem;
 }
 
 .menu > a:hover {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: rgb(79, 101, 221);
     transition-duration: 200ms;
 }
 
@@ -41,29 +54,28 @@ a {
     font-weight: bolder;
 }
 
-.poems-container {
+.questions-container {
     display: flex;
     flex: 1 1 auto;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.poem-container {
+.question-container {
     border: 1px dashed black;
     border-radius: 5px;
     padding: 1rem;
 }
 
-.poem-author {
+.question-author {
+    color: rgb(79, 101, 221);
     text-decoration: underline;
-    font-style: italic;
     margin-bottom: 1.2rem;
     margin-top: 1.2rem;
 }
 
-.poem-body {
-    margin: 1rem;
-    margin-bottom: 1.2rem;
+.question-body {
+    margin: 3rem;
 }
 
 header {
@@ -95,4 +107,18 @@ hr {
 .search-form ul {
     list-style-type: none;
     display: inline-flex;
+}
+
+.question-answer-container {
+    border: 1px solid black;
+}
+
+button:hover {
+    background-color: rgb(79, 101, 221);
+    color: white;
+}
+
+input:hover {
+    background-color: rgb(79, 101, 221);
+    color: white;
 }

@@ -130,6 +130,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
+SIMPLE_BACKEND_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
+
 # Custom user model
 
 AUTH_USER_MODEL = 'users.User'
