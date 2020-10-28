@@ -85,7 +85,7 @@ def add_favorite(request, pk):
     return JsonResponse({"message": message, "numLikes": numLikes})
                     
 
-def add_answer_favorite(request, pk,):
+def add_answer_favorite(request, pk):
     answer = get_object_or_404(Answer, pk=pk)
     user = request.user
     if user.is_authenticated:
@@ -104,3 +104,20 @@ def user_questions(request, pk):
     question_user = request.user
     question = question_user.questions.all()
     return render(request, "user_questions.html", {"questions": question, "question_user": question_user})
+
+def mark_as_correct(request, pk):
+    answer = get_object_or_404(Answer, pk=pk)
+    user = request.user
+    if user.is_authenticated and answer.question.user == user:
+        answer.correct_answer = not answer.correct_answer
+        answer.save()
+        message = "Answer correctness changed"
+    else:
+        message = "Only the asker can mark answers as correct!"
+    correct = answer.correct_answer           
+    return JsonResponse({"message": message, "correct": correct})    
+
+def correct_answers(request, pk):
+    question = get_object_or_404(Question, pk=pk)
+    question_correct_answers = question.answers.filter(correct_answer=True)
+    return render(request, "correct_answers.html", {"question": question, "question_correct_answers": question_correct_answers})

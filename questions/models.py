@@ -8,13 +8,17 @@ class Question(models.Model):
     favorites = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='favorites')
 
     def numfavorites(self):
-        return self.favorites.count()    
+        return self.favorites.count() 
+
+    def correct_answers(self):
+        return self.answers.filter(correct_answer = True)       
 
 class Answer(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     body = models.TextField()
     question = models.ForeignKey('Question', on_delete=models.CASCADE, related_name='answers')
     answer_favorites = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='answer_favorites')
+    correct_answer = models.BooleanField(default=False)
 
     def numfavorites(self):
         return self.answer_favorites.count()

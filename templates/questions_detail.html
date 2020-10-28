@@ -7,8 +7,7 @@
 <div class="question-wrapper">
 
     <div class='question-container'>
-        <h4>{{ poem.title }}</h4>
-        <p class='question-author'>{{ question.author }}</p>
+        <p class='question-author'>Asked by {{ question.author }}</p>
         <p class='question-body'><pre>{{ question.body }}</pre></p>
     </div>
 
@@ -31,8 +30,11 @@
             <hr>
             <div class='question-answer-container'>
                 <p class='timestamp'>Answer added on ({{ answer.timestamp }}): <pre>{{ answer.body }}</pre>
-                By: {{answer.author}}
-                    <button onclick="sendFavorite(this, '{% url 'add_answer_favorite' pk=answer.pk %}')">{{ answer.numfavorites }} favorites</button>                
+                <p>By: {{answer.author}}</p>
+                <p>
+                    <button onclick="sendFavorite(this, '{% url 'add_answer_favorite' pk=answer.pk %}')">{{ answer.numfavorites }} favorites</button> 
+                    <button onclick="markAsCorrect(this, '{% url 'mark_as_correct' pk=answer.pk %}')">{{ answer.correct_answer }} correct</button>                
+               
                 </p> 
             </div>
         {% endfor %}

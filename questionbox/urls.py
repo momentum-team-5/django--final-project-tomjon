@@ -28,7 +28,8 @@ urlpatterns = [
     path('questionbox/<int:pk>/delete/', question_views.questions_delete, name='questions_delete'),
     path('questionbox/favorite/<int:pk>/', question_views.add_favorite, name='add_favorite'),
     path('questionbox/answer_favorites/<int:pk>/', question_views.add_answer_favorite, name='add_answer_favorite'),
-    path('questionbox/user/<int:pk>', question_views.user_questions, name='user_questions')
+    path('questionbox/user/<int:pk>', question_views.user_questions, name='user_questions'),
+    path('questionbox/correct_answer/<int:pk>/', question_views.mark_as_correct, name='mark_as_correct'),
 ]
 
 if settings.DEBUG:
