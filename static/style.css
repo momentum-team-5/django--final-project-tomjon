@@ -11,6 +11,8 @@ h3 {
     margin: 5px 0px 10px 0px;
 }
 
+
+
 p {
     font-weight: bold;
     color: rgb(79, 101, 221);
@@ -66,13 +68,14 @@ p {
 }
 
 .question-author {
+    color: rgb(79, 101, 221);
     text-decoration: underline;
     margin-bottom: 1.2rem;
     margin-top: 1.2rem;
 }
 
 .question-body {
-    margin-bottom: 1.2rem;
+    margin: 3rem;
 }
 
 header {

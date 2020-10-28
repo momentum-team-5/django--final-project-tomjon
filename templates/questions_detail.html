@@ -33,7 +33,11 @@
                 <p>By: {{answer.author}}</p>
                 <p>
                     <button onclick="sendFavorite(this, '{% url 'add_answer_favorite' pk=answer.pk %}')">{{ answer.numfavorites }} favorites</button> 
-                    <button onclick="markAsCorrect(this, '{% url 'mark_as_correct' pk=answer.pk %}')">{{ answer.correct_answer }} correct</button>                
+                    <button onclick="markAsCorrect(this, '{% url 'mark_as_correct' pk=answer.pk %}')">
+                        {% if answer.correct_answer %} Correct!
+                        {% else %} This answer has yet to be verified
+                        {% endif %} </button>
+                                        
                
                 </p> 
             </div>

@@ -108,7 +108,7 @@ def user_questions(request, pk):
 def mark_as_correct(request, pk):
     answer = get_object_or_404(Answer, pk=pk)
     user = request.user
-    if user.is_authenticated and answer.question.user == user:
+    if user.is_authenticated and answer.question.author == user:
         answer.correct_answer = not answer.correct_answer
         answer.save()
         message = "Answer correctness changed"

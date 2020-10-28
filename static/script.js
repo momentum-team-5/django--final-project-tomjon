@@ -32,6 +32,9 @@ function markAsCorrect(source, url) {
         if (json.status) {console.log(`Request failed with ${json.status} code: ${json.reason}`)}
         else {
             alert(json.message)
-            source.textContent = `${json.correct} correct!`
+                if (json.correct)
+                    {source.textContent="Correct"}
+                else
+                    {source.textContent="This answer has yet to be verified"}    
         }}
     )}

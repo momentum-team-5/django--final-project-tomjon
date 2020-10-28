@@ -3,14 +3,14 @@
 
 {% block content %}
 
+<h3> All Questions </h3>
 
 <div class="poems-container">
     
     {% for question in questions %}
         <div class='question-container'>
-            <h4>{{ question.title }}</h4>
-            <p class='question-author'>    by {{ question.author }}</p>
-            <pre class='question-body'>{{ question.body }}</pre>
+            <h4>{{ question.title }} - asked by: {{ question.author }}</h4>
+            <p class='question-body'>{{ question.body }}</p>
             <p>
                 <a href="{% url 'questions_detail' pk=question.pk %}">More information</a>
                 
