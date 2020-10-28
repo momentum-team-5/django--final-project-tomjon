@@ -27,7 +27,10 @@ urlpatterns = [
     path('questionbox/add/', question_views.questions_add, name='questions_add'),
     path('questionbox/<int:pk>/delete/', question_views.questions_delete, name='questions_delete'),
     path('questionbox/favorite/<int:pk>/<int:user_pk>/', question_views.add_favorite, name='add_favorite')
+    path('questionbox/user/<int:pk>/', question_views.user_questions, name='user_questions'),
+    
 ]
+
 
 if settings.DEBUG:
     import debug_toolbar
