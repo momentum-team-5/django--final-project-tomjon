@@ -20,17 +20,19 @@
     <hr>
 
     <div class="answers-container">
+        {% if request.user.is_authenticated %}
         <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}
             <input type="submit" value="submit your answer">
         </form>
+        {% endif %}
 
         {% for answer in answers %}
             <hr>
             <div class='question-answer-container'>
                 <p class='timestamp'>Answer added on ({{ answer.timestamp }}): <pre>{{ answer.body }}</pre>
-                <p>By: {{ user }}</p>
+                <p>By: {{ answer.author }}</p>
                 <p>
                     <button onclick="sendFavorite(this, '{% url 'add_answer_favorite' pk=answer.pk %}')">{{ answer.numfavorites }} favorites</button> 
                     <button onclick="markAsCorrect(this, '{% url 'mark_as_correct' pk=answer.pk %}')">

@@ -14,7 +14,7 @@ def questions_list(request):
 def questions_detail(request, pk):
     question = get_object_or_404(Question, pk=pk)
     answers = question.answers.all()
-    if request.method =="GET":
+    if request.method == "GET" or not request.user.is_authenticated:
         form = AnswerForm()
     else:
         form = AnswerForm(data=request.POST)

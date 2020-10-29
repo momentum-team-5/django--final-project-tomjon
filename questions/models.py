@@ -19,6 +19,8 @@ class Answer(models.Model):
     question = models.ForeignKey('Question', on_delete=models.CASCADE, related_name='answers')
     answer_favorites = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='answer_favorites')
     correct_answer = models.BooleanField(default=False)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, related_name='answers')
+
 
     def numfavorites(self):
         return self.answer_favorites.count()
