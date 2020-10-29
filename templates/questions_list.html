@@ -5,7 +5,7 @@
 
 <h3> All Questions </h3>
 
-<div class="poems-container">
+<div class="questions-container">
     
     {% for question in questions %}
         <div class='question-container'>
@@ -15,7 +15,7 @@
                 <a href="{% url 'questions_detail' pk=question.pk %}">More information</a>
                 
                 <button onclick="sendFavorite(this, '{% url 'add_favorite' pk=question.pk %}')">{{ question.numfavorites }} favorites</button>                
-      
+
             </p>
         </div>
 

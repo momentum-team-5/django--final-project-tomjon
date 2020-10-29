@@ -7,7 +7,9 @@ from django.contrib.auth.models import User
 class Answer(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     body = models.TextField()
+    question = models.ForeignKey('Question', on_delete=models.CASCADE, related_name='answers')
     answer = models.ForeignKey('Answer', on_delete=models.CASCADE)
+
 
 # Create your models here.
 class Question(models.Model):
@@ -18,3 +20,6 @@ class Question(models.Model):
 
     def numfavorites(self)
         return self.favorites.count
+
+    def correct_answer(self):
+        return self.answers.filter(correct_answer = True)
